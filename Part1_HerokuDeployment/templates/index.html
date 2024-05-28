@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wine Quality Prediction</title>
+</head>
+<body>
+    <h1>Wine Quality Predictor</h1>
+    <p>To predict the wine quality, please enter a number between 0 and 10 for each attribute:</p>
+    <form action="/predict" method="post">
+        <label for="density">Density:</label>
+        <input type="text" id="density" name="density"><br><br>
+        <label for="residual_sugar">Residual Sugar:</label>
+        <input type="text" id="residual_sugar" name="residual_sugar"><br><br>
+        <label for="free_sulfur_dioxide">Free Sulfur Dioxide:</label>
+        <input type="text" id="free_sulfur_dioxide" name="free_sulfur_dioxide"><br><br>
+        <label for="alcohol">Alcohol:</label>
+        <input type="text" id="alcohol" name="alcohol"><br><br>
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction %}
+        <h2>{{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
